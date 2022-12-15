@@ -1,4 +1,5 @@
 function PluginInputRange(){
+  this.log = false;
   this.init = function(id){
     var e = document.getElementById(id);
     /**
@@ -57,7 +58,9 @@ function PluginInputRange(){
     /**
      * 
      */
-    console.log(e.value);
+    if(this.log){
+      console.log(e.value);
+    }
   }
   this.set_empty_innerhtml = function(id){
     var e = document.getElementById(id);

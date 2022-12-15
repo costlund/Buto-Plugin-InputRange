@@ -47,3 +47,8 @@ Use init metod with id of input element.
 ```
 PluginInputRange.init('_my_input_type_text_');
 ```
+### Log
+To show log output.
+```
+PluginInputRange.log=true;
+```
