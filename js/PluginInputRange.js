@@ -14,24 +14,26 @@ function PluginInputRange(){
     /**
      * 
      */
-    var btn_empty = document.createElement('a');
-    btn_empty.innerHTML = 'Clear'
-    btn_empty.id = id+'_empty';
-    btn_empty.href = '#!';
-    btn_empty.style.fontSize = 'smaller';
-    btn_empty.addEventListener("click", function(){PluginInputRange.empty(id);});
-    /**
-     * 
-     */
-    var btn_range = document.createElement('a');
-    btn_range.innerHTML = '- - Set range - -'
-    btn_range.id = id+'_range';
-    btn_range.href = '#!';
-    btn_range.style.fontSize = 'smaller';
-    btn_range.className = 'form-control';
-    btn_range.addEventListener("click", function(){PluginInputRange.range(id);});
-    e.parentNode.insertBefore(btn_empty, e);
-    e.parentNode.appendChild(btn_range);
+    if(!document.getElementById(id+'_empty')){
+      var btn_empty = document.createElement('a');
+      btn_empty.innerHTML = 'Clear'
+      btn_empty.id = id+'_empty';
+      btn_empty.href = '#!';
+      btn_empty.style.fontSize = 'smaller';
+      btn_empty.addEventListener("click", function(){PluginInputRange.empty(id);});
+      /**
+       * 
+       */
+      var btn_range = document.createElement('a');
+      btn_range.innerHTML = '- - Set range - -'
+      btn_range.id = id+'_range';
+      btn_range.href = '#!';
+      btn_range.style.fontSize = 'smaller';
+      btn_range.className = 'form-control';
+      btn_range.addEventListener("click", function(){PluginInputRange.range(id);});
+      e.parentNode.insertBefore(btn_empty, e);
+      e.parentNode.appendChild(btn_range);
+    }
     PluginInputRange.handle_buttons(id);
   }
   this.empty = function(id){
