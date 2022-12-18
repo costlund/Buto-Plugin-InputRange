@@ -47,8 +47,17 @@ Use init metod with id of input element.
 ```
 PluginInputRange.init('_my_input_type_text_');
 ```
+
 ### Log
 To show log output.
 ```
 PluginInputRange.log=true;
+```
+
+### Reset
+If you set input element to a value outside min, max browser will set it to middle value of min, max, if the type is range.
+To avoid this one could use method .reset().
+It will set the input to type hidden.
+```
+PluginInputRange.reset('_my_input_type_text_');
 ```

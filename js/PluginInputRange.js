@@ -10,11 +10,14 @@ function PluginInputRange(){
     }else{
       e.type='hidden';
     }
-    e.addEventListener("change", function(){PluginInputRange.change(id);});
-    /**
-     * 
-     */
     if(!document.getElementById(id+'_empty')){
+      /**
+       * 
+       */
+      e.addEventListener("change", function(){PluginInputRange.change(id);});
+      /**
+       * 
+       */
       var btn_empty = document.createElement('a');
       btn_empty.innerHTML = 'Clear'
       btn_empty.id = id+'_empty';
@@ -31,6 +34,9 @@ function PluginInputRange(){
       btn_range.style.fontSize = 'smaller';
       btn_range.className = 'form-control';
       btn_range.addEventListener("click", function(){PluginInputRange.range(id);});
+      /**
+       * 
+       */
       e.parentNode.insertBefore(btn_empty, e);
       e.parentNode.appendChild(btn_range);
     }
@@ -61,7 +67,7 @@ function PluginInputRange(){
      * 
      */
     if(this.log){
-      console.log(e.value);
+      console.log('PluginInputRange.handle_buttons.', e, e.value);
     }
   }
   this.set_empty_innerhtml = function(id){
@@ -70,6 +76,9 @@ function PluginInputRange(){
   }
   this.change = function(id){
     PluginInputRange.set_empty_innerhtml(id);
+  }
+  this.reset = function(id){
+    document.getElementById(id).type='hidden';
   }
 }
 var PluginInputRange = new PluginInputRange();
